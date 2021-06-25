@@ -1,22 +1,33 @@
+import { useHistory } from "react-router-dom";
+
 import illustrationImg from "assets/images/illustration.svg";
 import logoImg from "assets/images/logo.svg";
 import googleIconImg from "assets/images/google-icon.svg";
 
-import './auth.scss'
+import "styles/auth.scss";
+import { Button } from "components/Button";
 
 export function Home() {
-    return(
+    const history = useHistory();
+
+    function navigationNewRoom() {
+        history.push("/room/new");
+    }
+    return (
         <div id="page-auth">
             <aside>
-                <img src={illustrationImg} alt="ilustração perguntas e respostas"/>
+                <img
+                    src={illustrationImg}
+                    alt="ilustração perguntas e respostas"
+                />
                 <strong>Crie salas de Q&A ao-vivo</strong>
                 <p>Tire as dúvidas da sua audiência em tempo-real</p>
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask"/>
-                    <button className="create-room">
-                        <img src={googleIconImg} alt="logo do google"/>
+                    <img src={logoImg} alt="Letmeask" />
+                    <button onClick={navigationNewRoom} className="create-room">
+                        <img src={googleIconImg} alt="logo do google" />
                         Crie sua sela com o google
                     </button>
 
@@ -26,16 +37,10 @@ export function Home() {
                             type="text"
                             placeholder="Digite o código da sala"
                         />
-                        <button type="submit">
-                            Entrar na sal
-                        </button>
+                        <Button type="submit">Entrar na sala</Button>
                     </form>
                 </div>
             </main>
         </div>
-
     );
 }
-
-
-
