@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import illustrationImg from "assets/images/illustration.svg";
@@ -5,8 +6,11 @@ import logoImg from "assets/images/logo.svg";
 
 import "styles/auth.scss";
 import { Button } from "components/Button";
+import { AuthContext } from "contexts/AuthContexts";
 
 export function NewRoom() {
+    const { user, signInWithGoogle } = useContext(AuthContext);
+
     return (
         <div id="page-auth">
             <aside>
@@ -18,10 +22,10 @@ export function NewRoom() {
                 <p>Tire as dúvidas da sua audiência em tempo-real</p>
             </aside>
             <main>
+                <h1>{user?.name}</h1>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
                     <h2>Criar uma nova sala</h2>
-
                     <form>
                         <input type="text" placeholder="Nome da sala" />
                         <Button type="submit">Criar sala</Button>

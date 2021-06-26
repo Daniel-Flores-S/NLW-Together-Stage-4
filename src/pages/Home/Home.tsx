@@ -1,18 +1,26 @@
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
-import illustrationImg from "assets/images/illustration.svg";
+import { AuthContext } from "contexts/AuthContexts";
+
 import logoImg from "assets/images/logo.svg";
 import googleIconImg from "assets/images/google-icon.svg";
+import illustrationImg from "assets/images/illustration.svg";
 
 import "styles/auth.scss";
 import { Button } from "components/Button";
 
 export function Home() {
     const history = useHistory();
+    const { user, signInWithGoogle } = useContext(AuthContext);
 
-    function navigationNewRoom() {
+    async function handleCreateRoom() {
+        if (!user) {
+            await signInWithGoogle();
+        }
         history.push("/room/new");
     }
+
     return (
         <div id="page-auth">
             <aside>
@@ -26,7 +34,7 @@ export function Home() {
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
-                    <button onClick={navigationNewRoom} className="create-room">
+                    <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="logo do google" />
                         Crie sua sela com o google
                     </button>
