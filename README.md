@@ -26,12 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚀 Como executar
 
-Clone o projeto e acesse a pasta do mesmo.
 
-```bash
-$ git clone https://github.com/rocketseat-education/nlw-06-reactjs
-$ cd nlw-06-reactjs
-```
 
 Para iniciá-lo, siga os passos abaixo:
 ```bash
@@ -52,11 +47,7 @@ Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com
 Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)**, apresentada dos dias 20 a 27 de Junho de 2021.
 
 
-## 🔖 Layout
 
-Você pode visualizar o layout do projeto através do link abaixo:
-
-- [Layout Web](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate)
 
 
 
